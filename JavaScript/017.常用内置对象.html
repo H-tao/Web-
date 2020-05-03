@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>017.常用内置对象</title>
+    <script type="text/javascript">
+        // 1. document
+        //     document.getElementById  // 通过id获取元素
+        //     document.getElementsByTagName  // 通过标签名获取元素
+        //     document.referrer // 获取上一个跳转页面的地址(需要服务器环境)
+        // 2. location
+        //     window.location.href  // 获取或者重定url地址
+        //     window.location.search  // 获取地址参数
+        //     window.location.hash // 获取页面锚点或者哈希值
+
+        // 3.document.referrer使用参考
+        // window.onload = function () {
+        //     // 储存上一个页面的地址
+        //     // var sUrl = document.referrer;
+        //     var oBtn = document.getElementById('btn1');
+        //     oBtn.onclick = function () {
+        //         // window.location.href = sUrl;
+        //         window.location.href = 'http://www.baidu.com';
+        //     }
+        //
+        // }
+
+        // 4.window.location.search使用参考
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            var sData = window.location.search;
+
+            if(sData !== ''){
+                var aRr = sData.split("="); // 以"="划分参数
+                var iNum = aRr[1];  // aRr[0]为?, aRr[1]才是参数
+
+                if(iNum == 1){
+                    oDiv.style.backgroundColor = 'gold';
+                }
+                else if(iNum == 2){
+                    oDiv.style.backgroundColor = 'green';
+                }
+                else if(iNum == 0){
+                    oDiv.style.backgroundColor = 'red';
+                }
+                else{
+                    oDiv.style.backgroundColor = 'pink';
+                }
+
+            }
+        }
+        
+
+    </script>
+    <style type="text/css">
+        div{
+            width: 200px;
+            height: 200px;
+            position: center;
+            top: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+
+</head>
+<body>
+    <input type="button" name="" value="跳转页面1" id="'btn1">
+    <div id="div1" ></div>
+    <a href="017.常用内置对象.html?aa=1">金色</a>
+    <a href="017.常用内置对象.html?aa=2">绿色</a>
+    <a href="017.常用内置对象.html?aa=0">红色</a>
+    <a href="017.常用内置对象.html?aa=4">粉色</a>
+</body>
+</html>

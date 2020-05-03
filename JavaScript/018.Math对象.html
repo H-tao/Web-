@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>018.Math对象</title>
+    <script type="text/javascript">
+        // 1. Math.random()   // 生成 [0, 1) 之间的随机数，不包括1
+        // 2. Math.floor()    // 向下取整
+        // 3. Math.ceil()     // 向上取整
+
+        var iPi = Math.PI;
+
+        // 生成20个 [0, 1) 之间的随机浮点数
+        var arr = [];
+        for(var i = 0; i < 20; ++i){
+            var iNum = Math.random();   // random()生成 [0, 1) 之间的随机数，不包括1
+            arr.push(iNum);
+        }
+        console.log(arr);
+
+        // floor()向下取整，去掉小数位
+        console.log(Math.floor(5.6));     // 5
+
+        // ceil()向上取整
+        console.log(Math.ceil(5.2));      // 6
+
+        // 生成 [a, b) 之间的随机数
+        function fnRandom(a, b) {
+            return a + Math.floor((b - a) * Math.random());
+        }
+
+        // 生成30个 [10, 20) 之间的随机整数
+        var arr2 = [];
+        for(var i = 0; i < 30; ++i){
+            arr2.push(fnRandom(10, 20));
+        }
+        console.log(arr2);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

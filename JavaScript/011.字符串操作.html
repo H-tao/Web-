@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>011.字符串操作</title>
+    <script type="text/javascript">
+        var str = "123456789qwertyUIOP";
+
+        // parseInt 数字字符串转整数
+        alert('1234 === parseInt("1234"):  ' + (1234 === parseInt("1234")));
+
+        // parseFloat 数字字符串转小数
+        alert('1234.11 === parseFloat("1234.11"):  ' + (1234.11 === parseFloat("1234.11")));
+
+        // split(char) 分割字符串
+        alert('str.split(\'q\'):  ' + str.split('q'));
+
+        // charAt(pos)  获取pos位置某一字符
+        alert('str.charAt(3):  ' + str.charAt(3));
+
+        // indexOf(string, pos) 某位置是否某字符串
+        alert('str.indexOf(\'3\', 3):  ' + str.indexOf('3', 3));
+        alert('str.indexOf(\'3\', 4):  ' + str.indexOf('3', 4));
+
+        // substring(strat, end)
+        alert(str.substring(0, 4));
+
+        // toUpperCase()  转大写
+        alert(str.toUpperCase());
+
+        // toLowerCase() 转小写
+        alert(str.toLowerCase());
+
+        // 字符串反转
+        alert(str.split('').reverse().join(''));
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

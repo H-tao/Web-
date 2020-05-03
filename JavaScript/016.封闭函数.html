@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>016.封闭函数</title>
+    <script type="text/javascript">
+        // 一个封闭函数(匿名函数)，创建+执行
+        (function () {
+            alert('Hello World!');
+        })();
+
+        // 普通全局变量和函数
+        var iNum1 = 12;
+        function fnA() {
+            alert('This is Outter A');
+        }
+        fnA();  // 运行
+
+        // 封闭函数
+        (function () {
+            // 内部定义变量
+            var iNum1 = 24;
+            // 封闭函数内部定义函数
+            function fnA() {
+                alert('This is inner A');
+            }
+            fnA();  // 运行
+        })();
+
+        alert("Num: " + iNum1);     // 12
+    </script>
+</head>
+<body>
+
+</body>
+</html>

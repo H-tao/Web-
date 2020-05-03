@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>005.变量和函数的预解析</title>
+
+    <!--
+        JavaScript解析过程分为两个阶段，先是编译阶段，然后是执行阶段。
+        编译阶段会将function定义的函数提前，并且将var定义的变量声明提前，将它复制为undefined。
+    -->
+    <script type="text/javascript">
+
+        // 预解析会让变量的声明提前
+        alert(iNum);    // 弹出undefined
+
+        // alert(iNum111); // 未声明的变量，Console控制台报错
+
+        // 预解析会让函数的声明和定义提前
+        myalert();
+
+        var iNum = 12;
+
+        function myalert(){
+            alert("hello");
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>004页面换肤</title>
+    <link id="link1" rel="stylesheet" type="text/css" href="css/skin01.css">
+    <script type="text/javascript">
+        window.onload = function () {
+            var oBtn1 = document.getElementById("btn1");
+            var oBtn2 = document.getElementById("btn2");
+            var oLink = document.getElementById("link1");
+
+            oBtn1.onclick = function () {
+                oLink.href = "css/skin01.css";
+            };
+
+            oBtn2.onclick = function () {
+                oLink.href = "css/skin02.css";
+            };
+        }
+    </script>
+<body>
+    <input type="button" id="btn1" name="" value="皮肤1">
+    <input type="button" id="btn2" name="" value="皮肤2">
+</body>
+</html>

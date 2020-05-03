@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>015.倒计时</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+
+            function fnTimeLeft() {
+                // 实际开发中需要读取后台的时间，可以通过ajax来读取
+                var sNow = new Date();
+                // 未来时间：2020-12-12-24:00:00 注意：月份0-11
+                var sFuture = new Date(2020, 11, 12, 24, 0, 0);
+                // 计算倒计时剩余多少秒，转为天、小时、分
+                var sLeft = parseInt((sFuture - sNow)/1000);
+                var iDays = parseInt(sLeft / 86400);
+                var iHours = parseInt((sLeft % 86400) / 3600);
+                var iMinutes = parseInt(((sLeft%86400)%3600)/60);
+                var iSeconds = sLeft%60;
+
+                oDiv.innerHTML = '距离2020-12-12-24:00:00还剩 : ' + iDays + '天' + iHours + '时' + iMinutes + '分' + iSeconds + '秒';
+            }
+
+            fnTimeLeft();
+            setInterval(fnTimeLeft, 1000); // 每1000毫秒调用1次
+
+        }
+    </script>
+    <style type="text/css">
+        div{
+            text-align: center;
+            font-size: 30px;
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

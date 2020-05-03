@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>008.数组</title>
+    <script type="text/javascript">
+        // 创建方法：内建类，不推荐
+        // var aList1 = new Array(1, 2, 3);
+        // 直接创建
+        var aList2 = [1, 2, 3];
+
+        // 多维数组
+        var mutiArr = [[1,2,3,4], ['a','b','c'], [2,3,4,5,6]];
+        alert(mutiArr);
+        alert(mutiArr[1][2]);  // 'c'
+
+
+        // length 长度
+        len = aList2.length;
+
+        // join()
+        str = aList2.join('-');
+        alert("join('-'): " + str);
+
+        // push pop 数组后增删
+        aList2.push(4);
+        alert("After push 2: " + aList2);
+        a = aList2.pop();
+        alert("After pop: " + aList2);
+
+        // unshift shift 数组前增删
+        aList2.unshift(0);
+        alert("After unshift 0: " + aList2);
+        aList2.shift();
+        alert("After shift : " + aList2);
+
+        // reverse
+        aList2.reverse();
+        alert("After reverse: " + aList2);
+
+        // indexOf
+        alert("Get index of 2: " + aList2.indexOf(2));
+
+        // splice(n, m, a, b, c, ...) 从第n个元素开始，删除m个元素，然后在此位置添加a、b、c、...
+        aList2.splice(1, 0, 9, 8, 7);
+        alert("Splice(1, 0, 9, 8, 7) : " + aList2);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

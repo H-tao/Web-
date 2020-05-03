@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>009.利用数组创建页面列表</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var aList = ['C++', "Python", "Java", "JavaScript", "php"];
+            str = '';
+
+            // 构建html文本
+            for(var i=0; i < aList.length; ++i){
+                str += "<li>" + aList[i] + "</li>";
+            }
+
+            // 获取元素，并修改
+            oUl = document.getElementById('list');
+            oUl.innerHTML = str;
+        }
+
+
+    </script>
+    <style type="text/css">
+        .list{
+            list-style: none;
+            margin: 50px auto 0;
+            padding: 0;
+            width: 300px;
+            height: 305px;
+        }
+
+        .list li{
+            height: 60px;
+            border-bottom: 1px dotted #000;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="list" class="list">
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+    </ul>
+</body>
+</html>

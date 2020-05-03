@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>014.时钟</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+
+            function fnClock() {
+                var sNow = new Date();
+                // 获取年份
+                var iYear = sNow.getFullYear();
+                // 获取月份，月份 0 - 11
+                var iMonth = sNow.getMonth() + 1;
+                // iDate = s
+                var iDate = sNow.getDate();
+                // 获取周，0 - 6
+                var iWeek = sNow.getDay();
+                // 获取小时
+                var iHour = sNow.getHours();
+                // 获取分钟
+                var iMinute = sNow.getMinutes();
+                // 获取秒
+                var iSecond = sNow.getSeconds();
+
+                oDiv.innerHTML = '当前时间是：' + iYear + '年' + iMonth + '月' + iDate + '日' + fnWeekTransform(iWeek) + ' ' + iHour + ':' + iMinute + ':' + fnTodate(iSecond);
+            }
+
+            fnClock(); // 开始调用一次，解决初始时空白
+            setInterval(fnClock, 1000);
+
+            function fnWeekTransform(n) {
+                if (n === 0){
+                    return '星期一';
+                }
+                else if(n === 1){
+                    return '星期二';
+                }
+                else if(n === 2){
+                    return '星期三';
+                }                
+                else if(n === 3){
+                    return '星期四';
+                }                
+                else if(n === 4){
+                    return '星期五';
+                }                
+                else if(n === 5){
+                    return '星期六';
+                }                
+                else if(n === 6){
+                    return '星期日';
+                }
+            }
+            
+            function fnTodate(n) {
+                if(n < 10){
+                    return '0' + n;
+                }
+                else{
+                    return n;
+                }
+            }
+
+
+        }
+    </script>
+    <style type="text/css">
+        div{
+            text-align: center;
+            font-size: 30px;
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

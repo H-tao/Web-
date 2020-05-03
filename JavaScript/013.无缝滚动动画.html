@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>013.无缝滚动动画</title>
+    <link rel="stylesheet" type="text/css" href="css/slider.css">
+    <script type="text/javascript">
+        window.onload = function(){
+            // 整个ul的宽度为2000px，初始图片宽度为1000px
+            // 1. 将所有图片复制一份，10张图占满  [ 0px, 2000px ] , 显示的宽度为[ 0px, 1000px ]
+            // 2. 初始偏移为0，此时页面上是原来在 [ 0px, 2000px ] 的10张图
+            // 3. 向左运动，最多运动到偏移为-1000px，10张图占[ -1000px, 1000px ]
+            // 4. 向右运动，从[ -1000px, 1000px ] 到  [ 0px, 2000px ]，偏移达到0时需要重置为-1000px
+
+            var oDiv = document.getElementById('slide');
+            var oUl = oDiv.getElementsByTagName('ul')[0];  // 取得ul
+
+            oUl.innerHTML = oUl.innerHTML + oUl.innerHTML;
+
+            var iLeft = 0;      // 初始偏移为0
+            var iSpeed = -2;    // 移动速度为-2
+            var iNowSpeed = iSpeed; // 记录当前速度
+            function moving() {
+                iLeft += iSpeed;
+                if(iLeft < -1000){  // 偏移运动到-1000px，此时将偏移设置为0px
+                    iLeft = 0;
+                }
+                if (iLeft > 0){  // 偏移运动到0px，需要重置为-1000px
+                    iLeft = -1000;
+                }
+                oUl.style.left = iLeft + 'px';  // 设置偏移
+            }
+            var timer = setInterval(moving, 30);   // 每隔30秒触发moving
+
+            var oBtn1 = document.getElementById('btn1');
+            var oBtn2 = document.getElementById('btn2');
+
+            // 左边的button设置往左运动
+            oBtn1.onclick = function () {
+                iSpeed = -2;
+            };
+            // 右边的button设置往右运动
+            oBtn2.onclick = function () {
+                iSpeed = 2;
+            };
+            // 鼠标停留事件
+            oDiv.onmouseover = function(){
+                iNowSpeed = iSpeed;
+                iSpeed = 0;
+            };
+            // 鼠标移开事件
+            oDiv.onmouseout = function(){
+                iSpeed = iNowSpeed;
+            }
+
+        }
+    </script>
+</head>
+<body>
+     <div class="btns_con">
+         <div class="left" id="btn1">&lt;</div>
+         <div class="right" id="btn2">&gt;</div>
+     </div>
+    <div class="list_con" id="slide">
+        <ul>
+            <li><a href=""><img class="img" src="Guitar/1.jpg" alt="吉他图片"></a></li>
+            <li><a href=""><img class="img" src="Guitar/2.jpg" alt="吉他图片"></a></li>
+            <li><a href=""><img class="img" src="Guitar/3.jpg" alt="吉他图片"></a></li>
+            <li><a href=""><img class="img" src="Guitar/4.jpg" alt="吉他图片"></a></li>
+            <li><a href=""><img class="img" src="Guitar/5.jpg" alt="吉他图片"></a></li>
+        </ul>
+    </div>
+</body>
+</html>

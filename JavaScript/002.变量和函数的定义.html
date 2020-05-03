@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>002变量和函数</title>
+    <script type="text/javascript">
+        var iNum = 12;
+
+        // 数字：
+        var numberObject = 1;
+        // 字符串：
+        var stringObject = "1";
+        // 布尔：
+        var booleanObject = true;
+        // 空：
+        var nullObject = null;
+        // 未定义：
+        var undefinedObject = undefined;
+        // 对象
+        var jsObject = Object;
+
+        function fnMyalert() {
+            alert("hello!")
+        }
+        function fnChange() {
+            var oDiv = document.getElementById('div1');
+            oDiv.style.color = "red";
+            oDiv.style.fontSize = "30px";
+        }
+
+    </script>
+</head>
+<body>
+    <div id="div1" onclick="fnMyalert()">这是一个div元素，点我有提示</div>
+    <input type="button" name="" value="改变div样式" onclick="fnChange()">
+</body>
+</html>
